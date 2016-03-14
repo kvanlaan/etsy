@@ -52,7 +52,7 @@ var DetailView = Backbone.View.extend({
         console.log(data)
        
         var newHtmlString = ''
-            newHtmlString += '<div class = "detail"> <div class = "words"> Price:$' + data.price + ' <p> When Made:' + data.when_made + ' </p><p> Quantity#' + data.quantity + ' </p><p> Who Made:' + data.who_made + ' </p><p> User ID:' + data.user_id + '</p></div> <div class = "image"> <img class = "detailImage" src="' + data.Images[0].url_570xN + '"></div></div>'
+            newHtmlString += '<div class = "detail"> <div class = "words"> <h1>Price:</h1><h2> $' + data.price + '</h2><h1> When Made:</h1><h2> ' + data.when_made + ' </h2><h1> Quantity: </h1><h2>' + data.quantity + ' </h2><h1> Who Made: </h1><h2> ' + data.who_made + ' </h2><h1> User ID:</h1><h2> ' + data.user_id + '</h2></div><div class = "image"> <img class = "detailImage" src="' + data.Images[0].url_570xN + '"></div></div>'
         this.el.innerHTML = newHtmlString
 
     }
