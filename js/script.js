@@ -92,7 +92,7 @@ var listView = Backbone.View.extend({
         var newHtmlString = ''
         for (var i = 0; i < 25; i++) {
         	var dataObject = data[i]
-            newHtmlString += '<div class = "object">' + dataObject.title + '<img id = "' + dataObject.listing_id +  '" src="' + dataObject.Images[0].url_570xN + '"></div>'
+            newHtmlString += '<div class = "object"><div class = "objectTitle">' + dataObject.title + '</div><img id = "' + dataObject.listing_id +  '" src="' + dataObject.Images[0].url_570xN + '"></div>'
             // 
 
 
