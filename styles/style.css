@@ -259,8 +259,9 @@ background-color:rgba(230,230,250, 0.8);
     border-color: white;
     padding: 0;
     margin-left: 10%;
-    vertical-align:center;
+    vertical-align:top;
     margin-top: 0;
+    margin-bottom: 4%;
  
 }
 
