@@ -1,4 +1,6 @@
 
+
+
 console.log(Backbone)
 
 //global variables
@@ -39,7 +41,7 @@ var model = Backbone.Model.extend({
 //Daily View-----------------------------------------
 var DetailView = Backbone.View.extend({
 
-    el: "#container",
+    el: "#underlay",
 
     initialize: function(inputModel) {
         this.model = inputModel
@@ -50,18 +52,27 @@ var DetailView = Backbone.View.extend({
     _render: function() {
         var data = this.model.attributes.results[0]
         console.log(data)
+                 if (data.Images !== undefined) {
+                var imageURL = data.Images[0].url_570xN
+            } 
+        else {
+
+            var imageURL = "http://www.newyorker.com/wp-content/uploads/2014/08/Stokes-Hello-Kitty2-1200.jpg"
+
+        }
        
         var newHtmlString = ''
-            newHtmlString += '<div class = "detail"> <div class = "words"> <h1>Price:</h1><h2> $' + data.price + '</h2><h1> When Made:</h1><h2> ' + data.when_made + ' </h2><h1> Quantity: </h1><h2>' + data.quantity + ' </h2><h1> Who Made: </h1><h2> ' + data.who_made + ' </h2><h1> User ID:</h1><h2> ' + data.user_id + '</h2></div><div class = "image"> <img class = "detailImage" src="' + data.Images[0].url_570xN + '"></div></div>'
+            newHtmlString += '<div class = "detail"> <div class = "words"> <h1>Price:</h1><h2> $' + data.price + '</h2><h1> When Made:</h1><h2> ' + data.when_made + ' </h2><h1> Quantity: </h1><h2>' + data.quantity + ' </h2><h1> Who Made: </h1><h2> ' + data.who_made + ' </h2><h1> User ID:</h1><h2> ' + data.user_id + '</h2></div><div class = "image"> <img class = "detailImage" src="' + imageURL + '"></div></div>'
         this.el.innerHTML = newHtmlString
 
     }
+
 })
 
 
 //Current View------------------------------
 var listView = Backbone.View.extend({
-    el: "#container",
+    el: "#underlay",
 
     initialize: function(inputModel) {
         this.model = inputModel
@@ -87,18 +98,27 @@ var listView = Backbone.View.extend({
     },
 
     _render: function() {
-    	var data = this.model.attributes.results
+        var data = this.model.attributes.results
         console.log(data)
         var newHtmlString = ''
         for (var i = 0; i < 25; i++) {
-        	var dataObject = data[i]
-            newHtmlString += '<div class = "object"><div class = "objectTitle">' + dataObject.title + '</div><img id = "' + dataObject.listing_id +  '" src="' + dataObject.Images[0].url_570xN + '"></div>'
+            var dataObject = data[i]
+                 if (dataObject.Images !== undefined) {
+                var imageURL = dataObject.Images[0].url_570xN
+            } 
+        else {
+
+            var imageURL = "http://www.newyorker.com/wp-content/uploads/2014/08/Stokes-Hello-Kitty2-1200.jpg"
+
+        }
+
+            newHtmlString += '<div class = "object"><div class = "objectTitle">' + dataObject.title + '</div><img id = "' + dataObject.listing_id +  '" src="' + imageURL + '"></div>'
             // 
 
 
     // 
             // for (var i= 0; i < dataObject.Images.length; i ++) {
-            // 	 newHtmlString += '<div class = "image">' + dataObject.Images[i] + '</div>'
+            //   newHtmlString += '<div class = "image">' + dataObject.Images[i] + '</div>'
             // }
         }
         this.el.innerHTML = newHtmlString
