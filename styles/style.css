@@ -4,7 +4,19 @@ img{
 
 }
 
-.paisleyDiv  {
+body {
+background-color:rgba(230,230,250, 0.8);
+	font-family: "sans-serif";
+	color: #235166;
+	font-size: 55px;
+	box-sizing: border-box;
+	-webkit-text-stroke: white;
+	height: 100%;
+	width:100%;
+}
+
+
+/* .paisleyDiv  {
 	background-image: url('paisley.jpg');
 	background-size:cover;
 	display: inline-block;
@@ -48,7 +60,7 @@ img{
 
 	animation: animatedBackground 40s linear infinite;
 
-}
+} */
 
 
 /*  */
@@ -184,24 +196,16 @@ img{
 }
 #container {
 	background:url('paisley.jpg');
-	width: 75%;
+	width: 80%;
 	border-width: 5px;
 	border-style: dotted;
     border-color: white;
     z-index: 0;
     padding: 0%;
-    display: inline-block;
+    display: block;
     margin: auto;
 }
-body {
-background-color:rgba(230,230,250, 0.8);
-	font-family: "sans-serif";
-	color: #235166;
-	font-size: 55px;
-	-webkit-text-stroke: white;
-	height: 100%;
-	position:absolute;
-}
+
 
 #title {
 	text-align: center;
@@ -243,7 +247,7 @@ background-color:rgba(230,230,250, 0.8);
 	padding: 0;
 	border-width: 5px;
 	border-style: dashed;
-	color: #C1AC87;
+	color: turquoise;
 	background-color: 	rgba(230,230,250, 0.8);
     border-color: white;
     -webkit-text-stroke: .9 px black;
@@ -268,5 +272,5 @@ background-color:rgba(230,230,250, 0.8);
 h2 {
 	margin: 1%;
 	text-align: center;
-	color: #C1AC87;
+	color: turquoise;
 }
